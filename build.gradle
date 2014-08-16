@@ -5,6 +5,9 @@ apply plugin: 'application'
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
 
+group = 'com.masterofduh'
+version = '0.1.0-SNAPSHOT'
+
 mainClassName = "com.masterofduh.Webapp"
 
 repositories {
@@ -14,4 +17,20 @@ repositories {
 dependencies {
     compile 'io.dropwizard:dropwizard-core:0.7.1'
     testCompile 'junit:junit:4.11'
+}
+
+jar {
+    from(configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }) {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+
+    manifest {
+        attributes 'Implementation-Version': project.version,
+                'Built-By': System.getProperty('user.name'),
+                'Built-Date': new Date(),
+                'Built-JDK': System.getProperty('java.version'),
+                'Main-Class': mainClassName
+    }
 }
