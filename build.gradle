@@ -8,6 +8,6 @@ repositories {
 }
 
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'io.dropwizard:dropwizard-core:0.7.1'
     testCompile 'junit:junit:4.11'
 }
