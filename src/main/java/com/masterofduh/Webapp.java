@@ -65,6 +65,7 @@ public class Webapp extends Application<Configuration> {
 			Map<String, Object> res = new HashMap<>();
 			res.put("content", "What Trev, go eat a hot pepper!");
 			return res;
+			
 		}
 
 	}
