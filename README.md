@@ -7,5 +7,5 @@ techniques.
 
 ```bash
 gradle jar
-java -jar build/lib/simple-webapp-0.1.0-SNAPSHOT.jar server webapp.yml
+java -jar build/libs/simple-webapp-0.1.0-SNAPSHOT.jar server webapp.yml
 ```
